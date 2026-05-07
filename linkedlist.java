@@ -8,5 +8,11 @@ public class linkedlist{
 		System.out.println("Original Linkedlist: " + link);
 		link.set(0, -31);
 		System.out.println("First value swapped: " + link);
+		link.remove(Integer.valueOf(-31));
+		System.out.println("After removing -31: " + link);
+		link.add(0, -31);
+		link.remove(0);
+		System.out.println(link);
+		
 	}
 }
