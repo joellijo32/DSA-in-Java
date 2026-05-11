@@ -1,6 +1,7 @@
 import java.util.*;
 public class linkedlist{
 	public static void main(String args[]){
+		/*
 		LinkedList<Integer> link = new LinkedList<Integer>();
 		link.add(3);
 		link.add(532);
@@ -17,5 +18,20 @@ public class linkedlist{
 			System.out.print(link.get(i) + " ");
 		}
 		System.out.println();
+
+					*/
+
+		Scanner sc = new Scanner(System.in);
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		System.out.print("Enter the size: "); int size = sc.nextInt();
+		if(size <= 0){
+			System.out.println("Invalid size.");return;
+		}
+		System.out.println("Enter the values: ");
+		for(int i = 0;i < size; i++){
+			list.add(sc.nextInt());
+		}
+		System.out.println("The linked list entered: " + list);
+
 	}
 }
