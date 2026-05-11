@@ -12,7 +12,10 @@ public class linkedlist{
 		System.out.println("After removing -31: " + link);
 		link.add(0, -31);
 		link.remove(0);
-		System.out.println(link);
-		
+		System.out.println("The linked list: ");
+		for(int i = 0; i < link.size(); i++){
+			System.out.print(link.get(i) + " ");
+		}
+		System.out.println();
 	}
 }
