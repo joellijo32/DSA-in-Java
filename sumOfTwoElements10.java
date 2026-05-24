@@ -8,6 +8,16 @@ public class sumOfTwoElements10{
         for(int i = 0; i < n;i++) ar[i] = sc.nextInt();
         System.out.println("Entered Array: ");
         for(int i = 0; i < n; i++) System.out.print(ar[i] + " ");
+        System.out.print("\nElements Resulting Sum 10: ");
+
+        int a, b, sum = 0;
+        for(int i = 0; i < n;i++){
+            a = ar[i];
+            for(int j = i+1; j < n;j++ ){
+                b = ar[j];
+                if(a+b == 10) System.out.print("(" + a + ", " + b + ")  ");
+            }
+        }
         System.out.println();
     }
 }
