@@ -11,7 +11,7 @@ public class sumOfTwoElements10{
         System.out.print("\nElements Resulting Sum 10: ");
 
         int a, b, sum = 0;
-        for(int i = 0; i < n;i++){
+        for(int i = 0; i < n-1;i++){
             a = ar[i];
             for(int j = i+1; j < n;j++ ){
                 b = ar[j];
