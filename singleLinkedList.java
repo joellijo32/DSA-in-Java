@@ -9,4 +9,9 @@ public class singleLinkedList {
             this.data = data;
         }
     }
+
+
+    Node head = null;
+    Node tail = null;
+
 }
