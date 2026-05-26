@@ -63,6 +63,27 @@ public class singleLinkedList {
         }
     }
 
+    void insert(int pos, int data){
+        
+        Node newNode = new Node(data);
+        Node temp = head;
+
+        while(temp != null && temp.data != pos){
+            temp = temp.next;
+        }
+
+        if(temp == null){
+            return ; 
+        } else if(temp == tail){
+            tail.next = newNode;
+            tail = newNode;
+        } else if(temp.data == pos){
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+
+
+    }
 
     void display(){
         if(head == null){
@@ -88,9 +109,13 @@ public class singleLinkedList {
 
 
         ob.display();
-        System.out.print("Data to delete: ");
-        int del = sc.nextInt();
-        ob.delete(del);
+        // System.out.print("Data to delete: ");
+        // int del = sc.nextInt();
+        // ob.delete(del);
+
+        System.out.print("Pos and data to enter: ");
+        int pos = sc.nextInt(), data  = sc.nextInt();
+        ob.insert(pos, data);
         ob.display();
       
         
