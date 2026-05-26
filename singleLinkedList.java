@@ -29,6 +29,41 @@ public class singleLinkedList {
     }
 
 
+    void delete(int data){
+        Node temp = head, prev = null;
+        
+        if(temp != null && temp.data == data){
+            head = head.next;
+            temp = temp.next;
+            System.out.println("Deleted " + data );
+            return;
+        }
+
+        while(temp != null && temp.data != data){
+            prev = temp;
+            temp = temp.next;
+        }
+
+        if(temp == null){
+            System.out.println(data + " not found in linked list");
+            return;
+        }
+
+        if(temp == tail ){
+            tail = prev;
+            tail.next = null;
+            System.out.println("Deleted " + data);
+            return;
+        }
+
+        if(temp.data == data){
+            System.out.println("Deleted " + data);
+            prev.next = temp.next;   
+            return;
+        }
+    }
+
+
     void display(){
         if(head == null){
             System.out.println("Head is null. The linked list is empty.");
@@ -52,6 +87,10 @@ public class singleLinkedList {
         for(int i = 0; i< n;i++) ob.addNode(sc.nextInt());
 
 
+        ob.display();
+        System.out.print("Data to delete: ");
+        int del = sc.nextInt();
+        ob.delete(del);
         ob.display();
       
         
