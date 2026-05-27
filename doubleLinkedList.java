@@ -41,14 +41,51 @@ public class doubleLinkedList {
         }
 
         System.out.println();
-        System.out.println("Linked List (reverse): ");
-        temp = tail;
-        while(temp != null){
-            System.out.print(temp.data + " <-> ");
-            temp = temp.prev;
+        // System.out.println("Linked List (reverse): ");
+        // temp = tail;
+        // while(temp != null){
+        //     System.out.print(temp.data + " <-> ");
+        //     temp = temp.prev;
+        // }
+
+        // System.out.println();        
+    }
+
+    void delete(int data){
+        boolean flag = false;
+
+        if(head.data == data){
+            head = head.next;
+            head.prev = null;
+            flag = true;
+            return;
+        } else if(tail.data == data){
+            tail = tail.prev;
+            tail.next = null;
+            flag = true;
+            return;
         }
 
-        System.out.println();        
+        Node temp = head.next;
+
+        while(temp != tail){
+            if(temp.data == data){
+                flag = true;
+                break;
+            } 
+            temp = temp.next;
+        }
+
+        if(flag == true){
+            (temp.prev).next = temp.next;
+            (temp.next).prev = temp.prev;
+        } else{
+            System.out.println(data + " Not found in linked list.");
+            return;
+        } 
+
+        System.out.println(data + " is deleted from linked list");
+
     }
 
     public static void main(String args[]){
@@ -61,6 +98,13 @@ public class doubleLinkedList {
         for(int i = 0; i < n;i++){
             ob.addNode(sc.nextInt());
         }
+        ob.display();
+
+        System.out.print("Data to delete: ");
+        int del = sc.nextInt();
+
+        ob.delete(del);
+
         ob.display();
     }
 
