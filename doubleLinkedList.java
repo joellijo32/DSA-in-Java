@@ -88,6 +88,52 @@ public class doubleLinkedList {
 
     }
 
+    void insertAfter(int data, int val){
+        boolean flag = false;
+        Node newNode = new Node(val);
+
+        if(head.data == data){
+            (head.next).prev = newNode;
+            newNode.next = head.next;
+            flag = true;
+            head.next = newNode;
+            newNode.prev = head;
+
+            System.out.println(val + " is inserted after " + data);
+            return;
+            
+        } else if(tail.data == data){
+            newNode.prev = tail;
+            newNode.next = null;
+            flag = true;
+            tail.next = newNode;
+            tail = newNode;
+
+            System.out.println(val + " is inserted after " + data);
+            return;
+        }
+
+        Node temp = head.next;
+        while(temp != tail){
+            if(temp.data == data){
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+
+        if(flag == true){
+            newNode.prev = temp;
+            newNode.next = temp.next;
+
+            (temp.next).prev = newNode;
+            temp.next = newNode;
+            System.out.println(val + " is inserted after " + data);
+            
+        } else System.out.println(data + " is not found in linked list");
+
+    }
+
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.print("No. of elements: ");
@@ -100,12 +146,19 @@ public class doubleLinkedList {
         }
         ob.display();
 
-        System.out.print("Data to delete: ");
-        int del = sc.nextInt();
+        System.out.println("Enter data and val to enter: ");
+        int data = sc.nextInt(), val = sc.nextInt();
 
-        ob.delete(del);
+        ob.insertAfter(data, val);
 
         ob.display();
+
+        // System.out.print("Data to delete: ");
+        // int del = sc.nextInt();
+
+        // ob.delete(del);
+
+        
     }
 
 
