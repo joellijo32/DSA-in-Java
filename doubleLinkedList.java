@@ -134,6 +134,50 @@ public class doubleLinkedList {
 
     }
 
+
+    void insertBefore(int data, int val){
+        Node newNode = new Node(val);
+
+        if(head.data == data){
+            newNode.prev = null;
+            newNode.next = head;
+
+            head.prev = newNode;
+            head = newNode;
+            System.out.println(val + " entered before " + data);
+            return;
+        } else if(tail.data == data){
+            
+            newNode.prev = tail.prev;
+            newNode.next = tail;
+
+            (tail.prev).next = newNode;
+            tail.prev = newNode;
+            System.out.println(val + " entered before " + data);
+            return;
+        }
+
+        boolean flag = false;
+        Node temp = head.next;
+        while(temp != tail){
+            if(temp.data == data){
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+
+        if(flag){
+            newNode.prev = temp.prev;
+            newNode.next = temp;
+
+            (temp.prev).next = newNode;
+            temp.prev = newNode;
+            System.out.println(val + " is entered before " + data);
+        } else System.out.println(data + " is not in linked list");
+
+    }
+
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.print("No. of elements: ");
@@ -149,16 +193,16 @@ public class doubleLinkedList {
         System.out.println("Enter data and val to enter: ");
         int data = sc.nextInt(), val = sc.nextInt();
 
-        ob.insertAfter(data, val);
-
-        ob.display();
+        // ob.insertAfter(data, val);
 
         // System.out.print("Data to delete: ");
         // int del = sc.nextInt();
 
         // ob.delete(del);
 
-        
+        ob.insertBefore(data, val);
+
+        ob.display();
     }
 
 
