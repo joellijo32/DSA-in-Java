@@ -34,12 +34,21 @@ public class doubleLinkedList {
             System.out.println("Linked list is null."); 
             return;
         }
-        System.out.println("Linked List: ");
+        System.out.println("Linked List (forward): ");
         while(temp != null){
             System.out.print(temp.data + " <-> ");
             temp = temp.next;
         }
+
         System.out.println();
+        System.out.println("Linked List (reverse): ");
+        temp = tail;
+        while(temp != null){
+            System.out.print(temp.data + " <-> ");
+            temp = temp.prev;
+        }
+
+        System.out.println();        
     }
 
     public static void main(String args[]){
