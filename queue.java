@@ -50,6 +50,8 @@ public class queue {
 
         int val = front.data;
         front = front.next;
+
+        if(front == null) rear = null;
         return val;
     }
 
