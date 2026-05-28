@@ -15,6 +15,11 @@ public class stack {
     public Node top;
 
     void display(){
+
+        if(top == null){
+            System.out.println("Stack empty.");
+            return;
+        }
         Node temp = top;
         System.out.println("Stack: ");
         int flag = 0;
@@ -46,6 +51,11 @@ public class stack {
 
 
     int pop(){
+        if(top == null){
+            System.out.print(" Underflow: ");
+            return -1;
+        }
+        System.out.print("Popped: ");
         int val = top.data;
         top = top.next;
         return val;
@@ -61,6 +71,13 @@ public class stack {
 
         System.out.println("Enter the elements: ");
         for(int i = 0; i < n;i++) ob.push(sc.nextInt());
+
+        ob.display();
+
+        System.out.println(ob.pop());
+        System.out.println(ob.pop());
+        System.out.println(ob.pop());
+        System.out.println(ob.pop());
 
         ob.display();
     }
