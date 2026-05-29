@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class duplicateRemovalSLL {
+public class DuplicateRemovalSLL {
     
     public class Node{
         int data;
@@ -69,7 +69,7 @@ public class duplicateRemovalSLL {
         System.out.print("Size: "); 
         int n = sc.nextInt();
 
-        duplicateRemovalSLL ob = new duplicateRemovalSLL();
+        DuplicateRemovalSLL ob = new DuplicateRemovalSLL();
         System.out.println("Enter the elements: ");
         for(int i = 0; i < n;i++) ob.addNode(sc.nextInt());
 

@@ -1,5 +1,5 @@
 import java.util.*;
-public class targetReplacedOnLastPos {
+public class TargetReplacedOnLastPos {
 
     public int[] repl(int ar[], int target){
         
@@ -35,7 +35,7 @@ public class targetReplacedOnLastPos {
             ar[i] = sc.nextInt();
         }
 
-        targetReplacedOnLastPos ob = new targetReplacedOnLastPos();
+        TargetReplacedOnLastPos ob = new TargetReplacedOnLastPos();
 
         int target; System.out.print("Target: "); target = sc.nextInt();
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class doubleLinkedList {
+public class DoubleLinkedList {
     
     public class Node{
         Node prev, next;
@@ -184,7 +184,7 @@ public class doubleLinkedList {
         int n = sc.nextInt();
         System.out.println("Enter the elements: ");
 
-        doubleLinkedList ob = new doubleLinkedList();
+        DoubleLinkedList ob = new DoubleLinkedList();
         for(int i = 0; i < n;i++){
             ob.addNode(sc.nextInt());
         }

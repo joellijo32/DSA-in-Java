@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class stack {
+public class Stack {
     
     public class Node{
 
@@ -64,7 +64,7 @@ public class stack {
 
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        stack ob = new stack();
+        Stack ob = new Stack();
 
         System.out.print("Size: ");
         int n= sc.nextInt();

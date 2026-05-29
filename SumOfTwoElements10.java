@@ -1,5 +1,5 @@
 import java.util.*;
-public class sumOfTwoElements10{
+public class SumOfTwoElements10{
 
     public int[] sum(int ar[], int target){
         Set<Integer> set = new HashSet<>();
@@ -22,7 +22,7 @@ public class sumOfTwoElements10{
         for(int i = 0; i < n;i++) ar[i] = sc.nextInt();
         System.out.println("Entered Array: ");
         for(int i = 0; i < n; i++) System.out.print(ar[i] + " ");
-        sumOfTwoElements10 ob = new sumOfTwoElements10();
+        SumOfTwoElements10 ob = new SumOfTwoElements10();
         int result[] = ob.sum(ar, 10);
         if(result.length == 0){
             System.out.println("No matching pairs."); return;

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class reverseSingleLinkedList {
+public class ReverseSingleLinkedList {
     
     public class Node{
         Node next;
@@ -64,7 +64,7 @@ public class reverseSingleLinkedList {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
 
-        reverseSingleLinkedList ob = new reverseSingleLinkedList();
+        ReverseSingleLinkedList ob = new ReverseSingleLinkedList();
         System.out.print("Size: "); int n = sc.nextInt();
         System.out.println("Enter the elements: ");
         for(int i = 0;i < n;i++){

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class queue {
+public class Queue {
     public class Node{
         int data;
         Node next;
@@ -57,7 +57,7 @@ public class queue {
 
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        queue ob= new queue();
+        Queue ob= new Queue();
 
         System.out.print("Size: ");
         int n = sc.nextInt();

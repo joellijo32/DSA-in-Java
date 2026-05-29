@@ -1,5 +1,5 @@
 import java.util.*;
-public class singleLinkedList {
+public class SingleLinkedList {
 
 
     public class Node{
@@ -101,7 +101,7 @@ public class singleLinkedList {
 
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        singleLinkedList ob = new singleLinkedList();
+        SingleLinkedList ob = new SingleLinkedList();
 
         System.out.print("Enter size: "); int n = sc.nextInt();
         System.out.println("Enter the contents: ");
