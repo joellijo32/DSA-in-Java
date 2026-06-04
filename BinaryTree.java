@@ -12,4 +12,19 @@ public class BinaryTree {
     }
 
     Node root;
+
+    void insert(int data){
+        Node currentNode = root;
+    }
+
+    boolean contains(int data){
+        Node currentNode = root;
+        return false;
+    }
+
+
+    void remove(int data){
+        Node currentNode = root;
+    }
+
 }
