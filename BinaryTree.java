@@ -37,7 +37,7 @@ public class BinaryTree {
     }
 
     boolean contains(int data){
-        Node currentNode = root;
+        
         return false;
     }
 
@@ -47,6 +47,7 @@ public class BinaryTree {
     }
 
     void display(Node currentNode){
+        
         if(currentNode == null){
             System.out.println("Null");
             return;
@@ -75,6 +76,13 @@ public class BinaryTree {
 
         System.out.println("Binary Search Tree: ");
         ob.display(ob.root);
+
+        // System.out.print("\nElement to Search: ");
+        // int e = sc.nextInt();
+
+        // if(ob.contains(e)){
+        //     System.out.println(e + " is present in the BST");
+        // } else System.out.println (e + " is NOT present in BST");
 
 
 
