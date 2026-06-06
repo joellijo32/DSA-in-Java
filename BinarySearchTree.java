@@ -116,6 +116,31 @@ public class BinarySearchTree {
            
     }
 
+    void inOrder(Node currentNode){
+        if(currentNode == null) return;
+
+        inOrder(currentNode.left);
+        System.out.print(currentNode.data + " ");
+        inOrder(currentNode.right);
+    }
+
+    void postOrder(Node currentNode){
+        if(currentNode == null) return;
+
+        postOrder(currentNode.left);
+        postOrder(currentNode.right);
+        System.out.print(currentNode.data + " ");
+    }
+
+    void preOrder(Node currentNode){
+        if(currentNode == null) return;
+
+        System.out.print(currentNode.data + " ");
+        preOrder(currentNode.left);
+        preOrder(currentNode.right);
+    }
+
+
     public static void main(String args[]){
         // Scanner sc = new Scanner(System.in);
         // System.out.print("Number of elements: ");
@@ -144,6 +169,17 @@ public class BinarySearchTree {
         } else System.out.println (8 + " is NOT present in BST");
 
         ob.display(ob.root);
+
+        System.out.print("\nIn Order: " );
+        ob.inOrder(ob.root);
+
+        System.out.print("\nPre Order: ");
+        ob.preOrder(ob.root);
+
+        System.out.print("\nPost Order: ");
+        ob.postOrder(ob.root);
+
+        System.out.println();
 
         // System.out.print("Element to delete: ");
         // int del = sc.nextInt();
