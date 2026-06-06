@@ -117,33 +117,41 @@ public class BinarySearchTree {
     }
 
     public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Number of elements: ");
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("Number of elements: ");
+        // int n = sc.nextInt();
 
         BinarySearchTree ob = new BinarySearchTree();
-        System.out.println("Enter the elements: ");
-        for(int i = 0; i < n;i++){
-            ob.insert(sc.nextInt());
-        } 
+        ob.insert(10);        // System.out.println("Enter the elements: ");
+        ob.insert(8);        // System.out.println("Enter the elements: ");
+        ob.insert(11);        // System.out.println("Enter the elements: ");
+        ob.insert(4);        // System.out.println("Enter the elements: ");
+        ob.insert(9);        // System.out.println("Enter the elements: ");
+        // for(int i = 0; i < n;i++){
+        //     ob.insert(sc.nextInt());
+        // } 
+
 
         System.out.println("Binary Search Tree: ");
         ob.display(ob.root);
 
-        System.out.print("\nElement to Search: ");
-        int e = sc.nextInt();
+        // System.out.print("\nElement to Search: ");
+        // int e = sc.nextInt();
 
-        if(ob.contains(e)){
-            System.out.println(e + " is present in the BST");
-        } else System.out.println (e + " is NOT present in BST");
+        ob.remove(8);
+        if(ob.contains(8)){
+            System.out.println(8 + " is present in the BST");
+        } else System.out.println (8 + " is NOT present in BST");
 
-        System.out.print("Element to delete: ");
-        int del = sc.nextInt();
-
-        ob.remove(del);
         ob.display(ob.root);
 
-        sc.close();
+        // System.out.print("Element to delete: ");
+        // int del = sc.nextInt();
+
+        // ob.remove(del);
+        // ob.display(ob.root);
+
+        // sc.close();
 
     }
 }
