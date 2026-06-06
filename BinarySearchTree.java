@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BinaryTree {
+public class BinarySearchTree {
     
     public class Node{
         int data;
@@ -37,7 +37,17 @@ public class BinaryTree {
     }
 
     boolean contains(int data){
-        
+        if(root == null) return false;
+
+        Node currentNode = root;
+        while(currentNode != null){
+            if(currentNode.data == data) return true;
+            else if(currentNode.data > data){
+                currentNode = currentNode.left;
+                continue;
+            } else currentNode = currentNode.right;
+        }
+
         return false;
     }
 
@@ -68,7 +78,7 @@ public class BinaryTree {
         System.out.print("Number of elements: ");
         int n = sc.nextInt();
 
-        BinaryTree ob = new BinaryTree();
+        BinarySearchTree ob = new BinarySearchTree();
         System.out.println("Enter the elements: ");
         for(int i = 0; i < n;i++){
             ob.insert(sc.nextInt());
@@ -77,12 +87,12 @@ public class BinaryTree {
         System.out.println("Binary Search Tree: ");
         ob.display(ob.root);
 
-        // System.out.print("\nElement to Search: ");
-        // int e = sc.nextInt();
+        System.out.print("\nElement to Search: ");
+        int e = sc.nextInt();
 
-        // if(ob.contains(e)){
-        //     System.out.println(e + " is present in the BST");
-        // } else System.out.println (e + " is NOT present in BST");
+        if(ob.contains(e)){
+            System.out.println(e + " is present in the BST");
+        } else System.out.println (e + " is NOT present in BST");
 
 
 
