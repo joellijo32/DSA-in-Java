@@ -118,7 +118,7 @@ public class SingleLinkedList {
         ob.insert(pos, data);
         ob.display();
       
-        
+        sc.close();
     }
 
 }

@@ -23,5 +23,7 @@ public class StringDecipher{
         }
 
         System.out.println("Deciphered String: " + newStr);
+
+        sc.close();
     }
 }

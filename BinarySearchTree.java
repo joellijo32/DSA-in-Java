@@ -143,7 +143,7 @@ public class BinarySearchTree {
         ob.remove(del);
         ob.display(ob.root);
 
-
+        sc.close();
 
     }
 }

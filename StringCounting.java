@@ -26,6 +26,8 @@ public class StringCounting {
         
         newStr +=  count +  "" + (char)(str.charAt(i));
         System.out.println("Desired String: " + newStr);
+
+        sc.close();
         
     }
 }

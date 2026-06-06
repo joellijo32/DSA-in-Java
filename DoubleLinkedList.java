@@ -203,6 +203,9 @@ public class DoubleLinkedList {
         ob.insertBefore(data, val);
 
         ob.display();
+
+        sc.close();
+        
     }
 
 

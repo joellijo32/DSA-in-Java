@@ -13,5 +13,8 @@ public class FactorialUsingRecursion {
 
         FactorialUsingRecursion ob = new FactorialUsingRecursion();
         System.out.println("Factorial of " + n + " = " + ob.factorial(n));
+
+
+        sc.close();
     }
 }

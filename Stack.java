@@ -80,6 +80,8 @@ public class Stack {
         System.out.println(ob.pop());
 
         ob.display();
+
+        sc.close();
     }
 
 

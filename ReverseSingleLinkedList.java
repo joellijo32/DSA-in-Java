@@ -75,6 +75,7 @@ public class ReverseSingleLinkedList {
         ob.reverse();
         ob.display(ob.revHead);
 
+        sc.close();
     }
 
 }

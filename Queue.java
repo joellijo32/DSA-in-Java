@@ -79,5 +79,9 @@ public class Queue {
         System.out.println("Dequeue: " + ob.dequeue());
         ob.display();
         ob.display();
+
+
+
+        sc.close();
     }
 }
