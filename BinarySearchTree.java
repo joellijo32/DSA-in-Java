@@ -53,7 +53,50 @@ public class BinarySearchTree {
 
 
     void remove(int data){
-        Node currentNode = root;
+        removeHelper(data, root, null); 
+    }
+
+    private void removeHelper(int data, Node currentNode, Node parentNode){
+        while(currentNode != null){
+             if(data < currentNode.data){
+                 parentNode = currentNode;
+                 currentNode = currentNode.left;
+             } else if(data > currentNode.data){
+                parentNode = currentNode;
+                currentNode = currentNode.right;
+             } else {
+                if(currentNode.left != null && currentNode.right != null){
+                    currentNode.data =  getMinValue(currentNode.right) ;
+                    removeHelper(currentNode.data, currentNode.right, currentNode);
+                } else {
+                    if(parentNode == null){
+                        if(currentNode.right == null){
+                            root = currentNode.left;
+                        } else if(currentNode.left == null) root = currentNode.right;
+                    } else {
+                        if(parentNode.left == currentNode){
+                            if(currentNode.right == null){
+                                parentNode.left = currentNode.left;
+                            } else {
+                                parentNode.left = currentNode.right;
+                            }
+                        }else {
+                            if(currentNode.right == null){
+                                parentNode.right = currentNode.left;
+                            } else {
+                                parentNode.right = currentNode.right;
+                            }
+                        }
+                    }
+                }
+                break; 
+             }
+        }
+    }
+
+    int getMinValue(Node currentNode){
+        if(currentNode.left == null) return currentNode.data;
+        else return getMinValue(currentNode.left);
     }
 
     void display(Node currentNode){
@@ -93,6 +136,12 @@ public class BinarySearchTree {
         if(ob.contains(e)){
             System.out.println(e + " is present in the BST");
         } else System.out.println (e + " is NOT present in BST");
+
+        System.out.print("Element to delete: ");
+        int del = sc.nextInt();
+
+        ob.remove(del);
+        ob.display(ob.root);
 
 
 
