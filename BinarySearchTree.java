@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 
 public class BinarySearchTree {
     
@@ -141,6 +142,23 @@ public class BinarySearchTree {
     }
 
 
+    int findClosest(int data){
+        Node currentNode = root;
+        int closest = currentNode.data;
+        int diff = Math.abs((closest - data));
+        while(currentNode != null){
+            if(currentNode.data == data) return data;
+            if(diff >  Math.abs((currentNode.data - data))){
+                closest = currentNode.data;
+            }
+            if(currentNode.data > data) currentNode = currentNode.left;
+            else currentNode = currentNode.right;
+            
+        }
+
+        return closest;
+    }
+
     public static void main(String args[]){
         // Scanner sc = new Scanner(System.in);
         // System.out.print("Number of elements: ");
@@ -151,7 +169,7 @@ public class BinarySearchTree {
         ob.insert(8);        // System.out.println("Enter the elements: ");
         ob.insert(11);        // System.out.println("Enter the elements: ");
         ob.insert(4);        // System.out.println("Enter the elements: ");
-        ob.insert(9);        // System.out.println("Enter the elements: ");
+        ob.insert(25);        // System.out.println("Enter the elements: ");
         // for(int i = 0; i < n;i++){
         //     ob.insert(sc.nextInt());
         // } 
@@ -163,12 +181,12 @@ public class BinarySearchTree {
         // System.out.print("\nElement to Search: ");
         // int e = sc.nextInt();
 
-        ob.remove(8);
-        if(ob.contains(8)){
-            System.out.println(8 + " is present in the BST");
-        } else System.out.println (8 + " is NOT present in BST");
+        // ob.remove(8);
+        // if(ob.contains(8)){
+        //     System.out.println(8 + " is present in the BST");
+        // } else System.out.println (8 + " is NOT present in BST");
 
-        ob.display(ob.root);
+        // ob.display(ob.root);
 
         System.out.print("\nIn Order: " );
         ob.inOrder(ob.root);
@@ -179,7 +197,7 @@ public class BinarySearchTree {
         System.out.print("\nPost Order: ");
         ob.postOrder(ob.root);
 
-        System.out.println();
+        System.out.println("\nClosest to 15: " + ob.findClosest(15));
 
         // System.out.print("Element to delete: ");
         // int del = sc.nextInt();
