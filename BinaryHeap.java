@@ -26,7 +26,7 @@ public class BinaryHeap {
         while(leftIdx <= endIdx){
             int rightIdx = rightChild(currentIdx);
             int idxToShift;
-            if(rightIdx < endIdx && heap.get(rightIdx) < heap.get(leftIdx)){
+            if(rightIdx <= endIdx && heap.get(rightIdx) < heap.get(leftIdx)){
                 idxToShift = rightIdx;
 
             } else {
@@ -59,7 +59,7 @@ public class BinaryHeap {
     }
 
     void remove(){
-        Collections.swap(heap, heap.get(0), heap.get(heap.size() - 1));
+        Collections.swap(heap, 0, heap.size() - 1);
         heap.remove(heap.size() - 1);
 
         shiftDown(0);
@@ -85,16 +85,28 @@ public class BinaryHeap {
     void display(){
         System.out.print("\nHeap: ");
         for(int i = 0;i < heap.size() ;i++ ){
-            System.out.print("" + heap.get(i) + " ");
+            System.out.print(heap.get(i) + " ");
         }
         System.out.println();
     }
 
     public static void main(String args[]){
-        List<Integer> array = new ArrayList<>(Arrays.asList(32,5,1));
+        List<Integer> array = new ArrayList<>(Arrays.asList(32,5,15));
         BinaryHeap ob = new BinaryHeap(array);
+        ob.display();
+      
+        ob.insert(1);
+        ob.insert(47);
+        ob.insert(2);
 
         ob.display();
+        ob.buildHeap(array);
+        ob.display();
+        System.out.println("\nPeeking Value: " + ob.peek());
+
+        ob.remove();
+        ob.remove();
+        System.out.println("After two remove: " );  ob.display();
 
 
         
