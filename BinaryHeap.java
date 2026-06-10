@@ -8,31 +8,66 @@ public class BinaryHeap {
     }
 
     BinaryHeap(List<Integer> array){
-
+        buildHeap(array);
     }
 
     void buildHeap(List<Integer> array){
+        heap = array;
+        for(int i = parent(heap.size()- 1); i> -1; i--  ){
+            shiftDown(i);
 
+        }
     }
 
     void shiftDown(int currentIdx){
+        int endIdx = heap.size() - 1;
+        int leftIdx = leftChild(currentIdx);
 
+        while(leftIdx <= endIdx){
+            int rightIdx = rightChild(currentIdx);
+            int idxToShift;
+            if(rightIdx < endIdx && heap.get(rightIdx) < heap.get(leftIdx)){
+                idxToShift = rightIdx;
+
+            } else {
+                idxToShift = leftIdx;
+            }
+            if(heap.get(currentIdx) > heap.get(idxToShift)){
+                Collections.swap(heap, currentIdx, idxToShift);
+                currentIdx = idxToShift;
+                leftIdx = leftChild(currentIdx);
+            } else return;
+        }
     }
 
     void shiftUp(int currentIdx){
+        int parentIdx = parent(currentIdx);
+        while(currentIdx > 0 && heap.get(currentIdx) < heap.get(parentIdx)){
+             Collections.swap(heap, currentIdx, parentIdx);
+             currentIdx = parentIdx;
+             parentIdx = parent(currentIdx);
 
+        }
     }
 
     int peek(){
-        return 0;
+        if(heap.size() == 0){
+            System.out.println("\nEmpty Heap");
+            return -1;
+        }
+        return heap.get(0);
     }
 
     void remove(){
+        Collections.swap(heap, heap.get(0), heap.get(heap.size() - 1));
+        heap.remove(heap.size() - 1);
 
+        shiftDown(0);
     }
 
     void insert(int data){
-
+        heap.add(data);
+        shiftUp(heap.size() - 1);
     }
 
     int parent(int i){
@@ -59,7 +94,9 @@ public class BinaryHeap {
         List<Integer> array = new ArrayList<>(Arrays.asList(32,5,1));
         BinaryHeap ob = new BinaryHeap(array);
 
-        
+        ob.display();
+
+
         
     }
 
