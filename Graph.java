@@ -36,7 +36,7 @@ public class Graph {
          Graph ob = new Graph();
          ob.insertNode(3, 5, true);
          ob.insertNode(3, 4, true);
-         ob.insertNode(5, 6, true);
+         ob.insertNode(5, 6, false);
 
          ob.display();
          
