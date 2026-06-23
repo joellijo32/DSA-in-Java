@@ -17,7 +17,7 @@ public class BinarySearch{
 
     int binaryRecHelper(int[] arr, int target, int f, int l){
         if(f > l) return -1;
-        int mid = f + ((l-f)/2);
+        int mid = f + ((l-f)/2); //storage optimization
         if(target == arr[mid]) return mid;
         else if(arr[mid] < target) return binaryRecHelper(arr, target, mid+1, l);
             else return binaryRecHelper(arr, target, f, mid-1);
