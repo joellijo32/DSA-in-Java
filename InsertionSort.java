@@ -1,4 +1,5 @@
 public class InsertionSort {
+    
     void insertionSort(int[] arr){
         System.out.println("\nSorting: ");
         for(int i = 1; i < arr.length; i++){
