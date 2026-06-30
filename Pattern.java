@@ -1,12 +1,12 @@
 public class Pattern {
     public static void main(String args[]){
-        int binary = 1;
         for(int i = 0; i < 5; i++){
             for(int j = 0; j <= i; j++){
-                System.out.print(binary + " ");
-                 binary = 1 - binary;
+               int sum = i+j;
+               if(sum%2 == 0) System.out.print("1 ");
+               else System.out.print("0 ");
             } System.out.println();
-            if(i%2 != 0) binary = 1- binary;
+           
         }
     }
 }
