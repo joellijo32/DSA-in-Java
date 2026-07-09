@@ -15,5 +15,6 @@ public class PrimeNumber {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter: "); int number = sc.nextInt();
         System.out.println(ob.isPrimeNumber(number));
+        sc.close();
     }
 }
