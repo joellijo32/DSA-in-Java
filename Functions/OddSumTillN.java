@@ -17,5 +17,6 @@ public class OddSumTillN {
         System.out.print("N: ");
         int n = sc.nextInt();
         System.out.println("Odd Sum till " + n + ": " + ob.oddSum(n));
+        sc.close();
     }    
 }

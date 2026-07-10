@@ -16,5 +16,6 @@ public class Average {
 
         Average ob = new Average();
         System.out.println("Average: " + ob.average(a,b,c));
+        sc.close();
     }
 }
