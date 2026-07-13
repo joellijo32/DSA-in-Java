@@ -21,5 +21,6 @@ public class IsSorted {
         if(isSorted){
             System.out.println("Array is Sorted");
         } else System.out.println("Array is Unsorted");
+        sc.close();
     }
 }
