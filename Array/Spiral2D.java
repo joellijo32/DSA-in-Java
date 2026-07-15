@@ -7,24 +7,41 @@ public class Spiral2D {
         int rows = arr.length, columns = arr[0].length;
         int numberOfElements = rows * columns, visitedElements = 0;
         
-        int i = 0, j = 0, counter = 0;
-        while(visitedElements != numberOfElements){
-            while(j < columns-counter){
+        int i = 0, j = 0, top = 0, bottom = rows, left = 0, right = columns;
+        while(visitedElements < numberOfElements){
+            
+            while(j < right && visitedElements < numberOfElements){
                 System.out.print(arr[i][j] + "  ");
                 visitedElements++;
                 j++;
-            } counter++;
-            
+            } right--;
             i++;
             j--;
-            counter = 0;
-            while(i < rows-counter){
+            while(i < bottom && visitedElements < numberOfElements){
                 System.out.print(arr[i][j] + "  ");
                 visitedElements++;
                 i++;
-            } counter += 2;
-            
-            
+            } bottom--;
+            rows--;
+
+            i--;
+            j--;
+            while(j >= left && visitedElements < numberOfElements){
+                System.out.print(arr[i][j] + "  ");
+                visitedElements++;
+                j--;
+            } left++;
+
+            j++;
+            i--;
+            while(i > top && visitedElements < numberOfElements){
+                System.out.print(arr[i][j] + "  ");
+                visitedElements++;
+                i--;
+            } top++;
+            j++;
+            i++;
+            columns--;
         }
         System.out.println();
     }
