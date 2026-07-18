@@ -22,5 +22,7 @@ public class StringBuilderSample {
 
         sb.append("Appended-String");
         System.out.println(sb);
+
+        System.out.println(sb.length());
     }
 }
