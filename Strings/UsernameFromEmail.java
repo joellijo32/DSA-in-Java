@@ -4,19 +4,12 @@ import java.util.*;
 public class UsernameFromEmail {
     
     String usernameFromEmail(String email){
-        int i = 0; boolean isAtFound = false;
-        for(; i < email.length(); i++){
-            char currentChar = email.charAt(i);
-            if(currentChar == '@') {
-                isAtFound = true;
-                break;
-            }
-        }
-        if(!isAtFound){
+        int index = email.indexOf('@');
+        if(index == -1){
             System.out.println("Invalid e-mail.");
             System.exit(0);
         }
-        String result = email.substring(0, i);
+        String result = email.substring(0, index);
         return result;
         
     }
