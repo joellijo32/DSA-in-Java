@@ -1,5 +1,4 @@
 package Strings;
-import java.util.*;
 
 public class StringBuilderSample {
     
@@ -19,6 +18,9 @@ public class StringBuilderSample {
         System.out.println(sb);
 
         sb.delete(2, 3);
+        System.out.println(sb);
+
+        sb.append("Appended-String");
         System.out.println(sb);
     }
 }
