@@ -24,5 +24,7 @@ public class StringBuilderSample {
         System.out.println(sb);
 
         System.out.println(sb.length());
+        
+        System.out.println(sb.reverse());
     }
 }
