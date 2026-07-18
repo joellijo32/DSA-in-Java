@@ -11,5 +11,14 @@ public class StringBuilderSample {
 
         sb.setCharAt(1, 'o');
         System.out.println(sb);
+
+        sb.insert(0, 'T');
+        System.out.println(sb);
+
+        sb.insert(2, 3);
+        System.out.println(sb);
+
+        sb.delete(2, 3);
+        System.out.println(sb);
     }
 }
